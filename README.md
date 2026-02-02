@@ -72,8 +72,68 @@ User authentication mechanisms are essential to ensure secure and authorized acc
 Client-server chat applications are versatile tools that facilitate real-time communication between users over a network. They incorporate various components, including server-side and client-side elements, and must consider factors such as security, scalability, and concurrency. As technology continues to advance, client-server chat applications remain integral for collaborative communication in various domains.
 
 Client-server chat applications are foundational to real-time communication over networks. They incorporate principles of socket programming, communication protocols, and security mechanisms to provide a seamless user experience. Understanding the basics of client-server chat applications is essential for developers involved in networked application development, as they form the backbone of various collaborative communication systems. As technology evolves, chat applications continue to adapt, incorporating new features and technologies to enhance user interaction and connectivity.
+## Program :
+SERVER 
+'''
+
+  import socket
+  from base64 import decode
+  from operator import truediv
+  
+  server =socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  server.bind(('localhost', 9999))
+  server.listen()
+  client,addr=server.accept()
+  print("Server is waiting for messages")
+  done = False
+  
+  while not done:
+      msg = client.recv(1024).decode('utf-8')
+  
+      if msg == 'bye':
+          print("Client has exited the chat")
+          done = True
+          
+      else:
+          print("Buddy:", msg)
+  
+      client.send(input("your message: ").encode('utf-8'))
+  
+  
+  client.close()
+  server.close()
+
+'''
+CLIENT -
+'''
+import socket
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+client.connect(("localhost", 9999))
+print("Connected to the server")
+
+done=False
+
+while not done:
+    client.send(input("buudy message: ").encode('utf-8'))
+    msg = client.recv(1024).decode('utf-8')
+
+    if msg == 'bye':
+        print("Server has exited the chat")
+        done=True
+    else:
+        print("Server:", msg)
 
 
+
+client.close()
+'''
+OUTPUT -
+'''
+<img width="1323" height="303" alt="image" src="https://github.com/user-attachments/assets/72cd0f10-e7d2-4bb8-8b9b-97e2bad34bf7" />
+
+'''
 ## Result:
 
 Thus the study on Client Server Chat Applications has been performed

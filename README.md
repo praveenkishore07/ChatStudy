@@ -130,10 +130,8 @@ while not done:
 client.close()
 ```
 OUTPUT -
-```
-<img width="1323" height="303" alt="image" src="https://github.com/user-attachments/assets/72cd0f10-e7d2-4bb8-8b9b-97e2bad34bf7" />
+<img width="1322" height="302" alt="image" src="https://github.com/user-attachments/assets/6a58e6c5-fe5d-44f6-8be9-e47a74ee093c" />
 
-```
 ## Result:
 
 Thus the study on Client Server Chat Applications has been performed
